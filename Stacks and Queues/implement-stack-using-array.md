@@ -41,8 +41,6 @@ class Stack {
   }
 
   push(x) {
-    // Bug fix 1: condition was `>= this.arr.length` (off-by-one)
-    // Bug fix 2: missing `return` — execution continued even when full
     if (this.t >= this.arr.length - 1) {
       console.log("Stack overflow: stack is full");
       return;
@@ -52,7 +50,6 @@ class Stack {
   }
 
   pop() {
-    // Bug fix: missing `return` — t was decremented below -1 on empty stack
     if (this.t === -1) {
       console.log("Stack underflow: stack is already empty");
       return undefined;
